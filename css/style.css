@@ -7,6 +7,12 @@ list-style: none;
 cursor: pointer;
 }
 li:hover
-           {
-                background-color:#f9f9f9;
-           }  
+ {
+  background-color: #f9f9f9;
+}
+.heading{
+font-size: 59px;
+}
+.color{
+color: red;
+}
