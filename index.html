@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="searchApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="js/libs/angular.js" charset="utf-8"></script>
+    <script src="js/myApp.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="text-align:center;" >TrooSearch</h1>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" ng-controller="displayController">
+          <input type="text" class="form-control" ng-model="Search" ng-change="country1()" ng-keydown="changeKeydown(country,$event)"  ng-keyup="changeKeyup(country,$event)"  name="" value="" >
+
+          <ul class="list-group" ng-model="ul">
+            <li  class="list-group-item"  ng-if="Search.length>0" ng-model="hide"  ng-repeat="country in country_list | filter:Search as result"  ng-hide="hide" ng-click="fillText(country)" >
+                {{country | lowercase}}
+              <li class="list-group-item" ng-if="result.length==0">No Result Found</li>
+
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-3"></div>
+     </div>
+
+    </div>
+
+  </body>
+</html>
